@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Meta Socials</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f0f10;
+      --card: #1a1a1d;
+      --text: #f5f5f5;
+      --muted: #aaa;
+      --radius: 16px;
+      --accent: linear-gradient(135deg, #1877f2, #00a400);
+    }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .container {
+      max-width: 420px;
+      width: 100%;
+      text-align: center;
+    }
+    h1 {
+      font-size: 28px;
+      margin-bottom: 8px;
+      background: var(--accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    p {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 30px;
+    }
+    .card {
+      background: var(--card);
+      padding: 14px 20px;
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 14px;
+      margin-bottom: 16px;
+      text-decoration: none;
+      color: var(--text);
+      transition: transform 0.2s, background 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      background: #222226;
+    }
+    .card i {
+      font-size: 20px;
+      width: 28px;
+      text-align: center;
+    }
+    footer {
+      margin-top: 30px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🌐 Meta Socials</h1>
+    <p>Kumpulan platform buatan Meta, terhubung dalam satu tempat.</p>
+
+    <a href="https://www.facebook.com" target="_blank" class="card">
+      <i class="fab fa-facebook"></i>
+      <span>Facebook</span>
+    </a>
+    <a href="https://www.instagram.com" target="_blank" class="card">
+      <i class="fab fa-instagram"></i>
+      <span>Instagram</span>
+    </a>
+    <a href="https://www.whatsapp.com" target="_blank" class="card">
+      <i class="fab fa-whatsapp"></i>
+      <span>WhatsApp</span>
+    </a>
+    <a href="https://www.messenger.com" target="_blank" class="card">
+      <i class="fab fa-facebook-messenger"></i>
+      <span>Messenger</span>
+    </a>
+    <a href="https://www.threads.net" target="_blank" class="card">
+      <i class="fas fa-thread"></i> <!-- Threads ga ada official FA, jadi placeholder -->
+      <span>Threads</span>
+    </a>
+
+    <footer>
+      &copy; <span id="year"></span> Meta Platforms, Inc.
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
