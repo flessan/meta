@@ -18,14 +18,12 @@
     <div class="header-left">
       <button class="menu-btn" id="sidebarToggleBtn" aria-label="Toggle Sidebar">☰</button>
       <a href="#" class="logo" style="gap:4px;">
-        <img src="assets/logo.png" alt="DarkTube Logo" class="logo-img">
+        <img src="https://i.ibb.co/Kpp8RjCt/20250830-232559.png" alt="DarkTube Logo" class="logo-img">
       </a>
     </div>
     <div class="search" style="max-width: 150px;">
       <input id="q" type="search" placeholder="Searching..." autocomplete="off" />
-      <button class="btn" id="clearBtn" title="Bersihkan" style="display:none">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
+      <button class="btn" id="clearBtn" title="Bersihkan" style="display:none"><i class="fa-solid fa-xmark"></i></button>
     </div>
     <div class="mini-stats">
       <span id="statTotal">Total: 0</span>
@@ -63,6 +61,7 @@
 
   <!-- Main Content -->
   <main class="main-content" id="mainContent">
+    <!-- Controls -->
     <div class="controls" style="margin-bottom:18px;">
       <div class="pill">Sort:
         <select id="sort" class="btn" style="margin-left:6px">
@@ -71,52 +70,92 @@
           <option value="random">Random</option>
         </select>
       </div>
-      <button class="icon-btn" id="viewFavsBtn"><i class="fa-solid fa-star"></i></button>
-      <button class="icon-btn" id="refresh"><i class="fa-solid fa-rotate-right"></i> Refresh</button>
+      <!-- Favorites & Refresh -->
+      <button class="icon-btn" id="viewFavsBtn" title="Lihat Favorites"><i class="fa-solid fa-star"></i></button>
+      <button class="icon-btn" id="refresh" title="Refresh data"><i class="fa-solid fa-rotate-right"></i> Refresh</button>
       <span class="pill" id="activeView" style="margin-left:8px;">DarkTube v1</span>
     </div>
 
+    <!-- Home Section -->
     <section class="page-section active" id="home">
       <div id="grid" class="grid">
         <div class="info" id="loading">Memuat video...</div>
       </div>
     </section>
 
+    <!-- Favorites Section -->
     <section class="page-section" id="favorites">
       <h1><i class="fa-solid fa-star"></i> Favorites</h1>
       <div class="grid" id="favoritesGrid"></div>
     </section>
 
+    <!-- About Section -->
     <section class="page-section" id="about">
       <div class="about-content">
         <h2>Tentang DarkTube</h2>
-        <p>DarkTube adalah platform eksperimental...</p>
+        <p>
+          <strong>DarkTube</strong> adalah platform yang menyelami sisi gelap dari internet, menyajikan konten-konten yang dilarang, tersembunyi, dan ditolak oleh sistem mainstream. Kami menghadirkan [...]
+        </p>
+        <p>
+          Di sini, tidak ada sensor. Tidak ada filter. Hanya kebenaran telanjang yang tidak berani ditampilkan oleh platform lain. Kami mengumpulkan serpihan-serpihan konten yang hilang dalam labirin [...]
+        </p>
+        <p>
+          Platform ini diciptakan sebagai bentuk perlawanan terhadap tirani algoritma dan sensor korporat. Sebuah tempat di mana kegelapan dapat bernapas bebas, di mana yang terlarang menjadi aksesibl[...]
+        </p>
+        <p style="color: #ff4444; font-weight: 500;">
+          ⚠️ Masuki dengan risiko sendiri. Yang Anda saksikan di sini mungkin akan mengubah cara Anda memandang dunia. Beberapa kebenaran terlalu kelam untuk dilupakan.
+        </p>
       </div>
     </section>
 
+    <!-- Terms of Service -->
     <section class="page-section" id="tos">
       <div class="about-content">
         <h2>Ketentuan Layanan</h2>
-        <p>Dengan menggunakan DarkTube, Anda setuju...</p>
+        <p>
+          Dengan menggunakan DarkTube, Anda setuju untuk mematuhi ketentuan layanan berikut:
+        </p>
+        <ol style="color: #ccc; font-size: 16px;">
+          <li>Konten yang ditampilkan di platform ini bersumber dari berbagai kontributor dan mungkin mengandung materi yang bersifat eksperimental atau non-mainstream.</li>
+          <li>Pengguna bertanggung jawab atas penggunaan platform ini dan diharapkan untuk menggunakan dengan bijak.</li>
+          <li>Kami tidak bertanggung jawab atas konten yang dibuat oleh pengguna atau pihak ketiga.</li>
+          <li>Ketentuan layanan ini dapat berubah sewaktu-waktu tanpa pemberitahuan sebelumnya.</li>
+        </ol>
       </div>
     </section>
 
+    <!-- Submit Section -->
     <section class="page-section" id="submit">
       <form class="submit-form" onsubmit="submitVideo(event)">
-        <h2>📤 Kirim Video</h2>
-        <input type="url" id="videoUrl" class="form-input" placeholder="https://youtube.com/watch?v=..." required>
-        <input type="text" id="username" class="form-input" placeholder="Masukkan username Anda" required>
-        <textarea id="description" class="form-input" rows="4" placeholder="Deskripsi video..." required></textarea>
+        <h2 style="text-align: center; color: var(--accent); margin-bottom: 30px;">📤 Kirim Video</h2>
+        <p style="text-align: center; color: #aaa; margin-bottom: 30px;">
+          Bagikan video menarik Anda dengan komunitas DarkTube
+        </p>
+        <div class="form-group">
+          <label class="form-label" for="videoUrl">Link YouTube Video:</label>
+          <input type="url" id="videoUrl" class="form-input" placeholder="https://youtube.com/watch?v=..." required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="username">Username Anda:</label>
+          <input type="text" id="username" class="form-input" placeholder="Masukkan username Anda" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="description">Deskripsi Video:</label>
+          <textarea id="description" class="form-input" rows="4" placeholder="Ceritakan tentang video Anda..." required></textarea>
+        </div>
         <button class="submit-btn" type="submit">Kirim Video</button>
+        <p style="text-align: center; margin-top: 20px; color: #aaa; font-size: 14px;">
+          Atau gunakan <a href="https://forms.gle/GvHY4th5bKzKjj2V7" target="_blank" style="color: var(--accent);">Google Form</a>
+        </p>
       </form>
     </section>
   </main>
 
   <!-- Modal Player -->
-  <div id="modal" class="modal">
+  <div id="modal" class="modal" aria-hidden="true">
     <div class="modal-inner">
       <button class="modal-close" id="closeModal"><i class="fa-solid fa-xmark"></i></button>
-      <iframe id="player" class="player" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      <iframe id="player" class="player" allow="autoplay; encrypted-media" allowfullscreen title="YouTube player"></iframe>
     </div>
   </div>
 
