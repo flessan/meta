@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>DarkTube</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- FontAwesome & PapaParse -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="setail.css">
+</head>
+<body>
+  <!-- Header -->
+  <div class="header">
+    <div class="header-left">
+      <button class="menu-btn" id="sidebarToggleBtn" aria-label="Toggle Sidebar">☰</button>
+      <a href="#" class="logo" style="gap:4px;">
+        <img src="assets/logo.png" alt="DarkTube Logo" class="logo-img">
+      </a>
+    </div>
+    <div class="search" style="max-width: 150px;">
+      <input id="q" type="search" placeholder="Searching..." autocomplete="off" />
+      <button class="btn" id="clearBtn" title="Bersihkan" style="display:none">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <div class="mini-stats">
+      <span id="statTotal">Total: 0</span>
+      <span id="statUploaders">Uploader: 0</span>
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <nav class="sidebar" id="sidebar" aria-label="Sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-item active" data-view="home">
+        <span class="sidebar-icon"><i class="fa-solid fa-house-chimney"></i></span>
+        <span>Beranda</span>
+      </div>
+      <div class="sidebar-item" data-view="favorites">
+        <span class="sidebar-icon"><i class="fa-solid fa-star"></i></span>
+        <span>Favorites</span>
+      </div>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-item" data-view="about">
+        <span class="sidebar-icon"><i class="fa-solid fa-circle-info"></i></span>
+        <span>Tentang</span>
+      </div>
+      <div class="sidebar-item" data-view="tos">
+        <span class="sidebar-icon"><i class="fa-solid fa-file-contract"></i></span>
+        <span>Ketentuan</span>
+      </div>
+      <div class="sidebar-item" data-view="submit">
+        <span class="sidebar-icon"><i class="fa-solid fa-cloud-arrow-up"></i></span>
+        <span>Kirim Video</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main-content" id="mainContent">
+    <div class="controls" style="margin-bottom:18px;">
+      <div class="pill">Sort:
+        <select id="sort" class="btn" style="margin-left:6px">
+          <option value="newest">Newest</option>
+          <option value="username">Username A→Z</option>
+          <option value="random">Random</option>
+        </select>
+      </div>
+      <button class="icon-btn" id="viewFavsBtn"><i class="fa-solid fa-star"></i></button>
+      <button class="icon-btn" id="refresh"><i class="fa-solid fa-rotate-right"></i> Refresh</button>
+      <span class="pill" id="activeView" style="margin-left:8px;">DarkTube v1</span>
+    </div>
+
+    <section class="page-section active" id="home">
+      <div id="grid" class="grid">
+        <div class="info" id="loading">Memuat video...</div>
+      </div>
+    </section>
+
+    <section class="page-section" id="favorites">
+      <h1><i class="fa-solid fa-star"></i> Favorites</h1>
+      <div class="grid" id="favoritesGrid"></div>
+    </section>
+
+    <section class="page-section" id="about">
+      <div class="about-content">
+        <h2>Tentang DarkTube</h2>
+        <p>DarkTube adalah platform eksperimental...</p>
+      </div>
+    </section>
+
+    <section class="page-section" id="tos">
+      <div class="about-content">
+        <h2>Ketentuan Layanan</h2>
+        <p>Dengan menggunakan DarkTube, Anda setuju...</p>
+      </div>
+    </section>
+
+    <section class="page-section" id="submit">
+      <form class="submit-form" onsubmit="submitVideo(event)">
+        <h2>📤 Kirim Video</h2>
+        <input type="url" id="videoUrl" class="form-input" placeholder="https://youtube.com/watch?v=..." required>
+        <input type="text" id="username" class="form-input" placeholder="Masukkan username Anda" required>
+        <textarea id="description" class="form-input" rows="4" placeholder="Deskripsi video..." required></textarea>
+        <button class="submit-btn" type="submit">Kirim Video</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Modal Player -->
+  <div id="modal" class="modal">
+    <div class="modal-inner">
+      <button class="modal-close" id="closeModal"><i class="fa-solid fa-xmark"></i></button>
+      <iframe id="player" class="player" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast">Toast</div>
+
+  <!-- JS -->
+  <script src="sekerip.js"></script>
+</body>
+</html>
