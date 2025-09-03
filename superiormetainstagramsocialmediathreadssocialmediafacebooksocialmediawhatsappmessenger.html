@@ -2,106 +2,123 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Meta Socials</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kumpulan Community Chat</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <style>
     :root {
-      --bg: #0f0f10;
-      --card: #1a1a1d;
-      --text: #f5f5f5;
-      --muted: #aaa;
-      --radius: 16px;
-      --accent: linear-gradient(135deg, #1877f2, #00a400);
+      --bg: #f0f2f5;
+      --card: #fff;
+      --text: #111;
+      --muted: #666;
+      --radius: 18px;
+      --shadow: 0 4px 12px rgba(0,0,0,0.08);
+      --accent: #1877f2;
     }
+    * { margin:0; padding:0; box-sizing:border-box; }
     body {
-      margin: 0;
       font-family: "Segoe UI", Roboto, Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
       display: flex;
       justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      padding: 20px;
+      padding: 40px 20px;
     }
     .container {
-      max-width: 420px;
+      max-width: 780px;
       width: 100%;
       text-align: center;
     }
     h1 {
-      font-size: 28px;
-      margin-bottom: 8px;
-      background: var(--accent);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      font-size: 32px;
+      margin-bottom: 10px;
+      color: var(--accent);
     }
     p {
-      font-size: 14px;
       color: var(--muted);
-      margin-bottom: 30px;
+      font-size: 16px;
+      margin-bottom: 40px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
     }
     .card {
       background: var(--card);
-      padding: 14px 20px;
       border-radius: var(--radius);
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      gap: 14px;
-      margin-bottom: 16px;
+      padding: 25px 20px;
+      box-shadow: var(--shadow);
       text-decoration: none;
       color: var(--text);
-      transition: transform 0.2s, background 0.3s;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
     .card:hover {
-      transform: translateY(-3px);
-      background: #222226;
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
     }
     .card i {
-      font-size: 20px;
-      width: 28px;
-      text-align: center;
+      font-size: 32px;
+      margin-bottom: 12px;
+      color: var(--accent);
+    }
+    .card h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+    .card span {
+      font-size: 14px;
+      color: var(--muted);
     }
     footer {
-      margin-top: 30px;
-      font-size: 12px;
+      margin-top: 50px;
+      font-size: 14px;
       color: var(--muted);
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>🌐 Meta Socials</h1>
-    <p>Kumpulan platform buatan Meta, terhubung dalam satu tempat.</p>
+    <h1>💬 Community Chat Hub</h1>
+    <p>Kumpulan channel & grup tempat kita ngobrol bareng 🚀</p>
 
-    <a href="https://www.facebook.com" target="_blank" class="card">
-      <i class="fab fa-facebook"></i>
-      <span>Facebook</span>
-    </a>
-    <a href="https://www.instagram.com" target="_blank" class="card">
-      <i class="fab fa-instagram"></i>
-      <span>Instagram</span>
-    </a>
-    <a href="https://www.whatsapp.com" target="_blank" class="card">
-      <i class="fab fa-whatsapp"></i>
-      <span>WhatsApp</span>
-    </a>
-    <a href="https://www.messenger.com" target="_blank" class="card">
-      <i class="fab fa-facebook-messenger"></i>
-      <span>Messenger</span>
-    </a>
-    <a href="https://www.threads.net" target="_blank" class="card">
-      <i class="fas fa-thread"></i> <!-- Threads ga ada official FA, jadi placeholder -->
-      <span>Threads</span>
-    </a>
+    <div class="grid">
+      <a href="https://www.threads.com/@flethio" target="_blank" class="card">
+        <i class="fab fa-threads"></i>
+        <h3>Threads</h3>
+        <span>@flethio</span>
+      </a>
+      <a href="https://whatsapp.com/channel/0029VbAoWYi7T8bQVepYkn1a" target="_blank" class="card">
+        <i class="fab fa-whatsapp"></i>
+        <h3>WhatsApp Channel</h3>
+        <span>Join langsung di WhatsApp</span>
+      </a>
+      <a href="https://freedomgdps.t.me" target="_blank" class="card">
+        <i class="fab fa-telegram"></i>
+        <h3>Telegram Channel</h3>
+        <span>@FreedomGDPS</span>
+      </a>
+      <a href="https://www.facebook.com/groups/1318080329685659/?ref=share&mibextid=NSMWBT" target="_blank" class="card">
+        <i class="fab fa-facebook"></i>
+        <h3>Facebook Group</h3>
+        <span>FrGDPS Community</span>
+      </a>
+      <a href="https://www.reddit.com/r/FrGDPS/" target="_blank" class="card">
+        <i class="fab fa-reddit"></i>
+        <h3>Reddit</h3>
+        <span>r/FrGDPS</span>
+      </a>
+      <a href="https://discord.gg/6HEyQBcM6E" target="_blank" class="card">
+        <i class="fab fa-discord"></i>
+        <h3>Discord</h3>
+        <span>Gabung server chat</span>
+      </a>
+    </div>
 
     <footer>
-      &copy; <span id="year"></span> Meta Platforms, Inc.
+      &copy; <span id="year"></span> Community Hub — Made with ❤️ by Thio
     </footer>
   </div>
-
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
